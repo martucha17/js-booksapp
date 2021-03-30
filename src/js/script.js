@@ -56,7 +56,7 @@
                     favoriteBooks.push(bookId);
                 }
             }
-            filterBooks();
+            
         });
 
         const filtersForm = document.querySelector(select.filtersForm);
@@ -71,6 +71,7 @@
                 const index = filters.indexOf(event.target.value);
                 filters.splice(index, 1);
             }
+            filterBooks();
         });
 
     }
@@ -85,7 +86,7 @@
                 }
             }
 
-            const toHiddeBook = document.querySelectorAll(select.bookImage[data-id="dataSource.books.id"]);
+            const toHiddeBook = document.querySelectorAll(select.bookImage + 'data-id = "dataSource.books.id"');
             console.log(toHiddeBook);
 
             if (shouldBeHidden == true) {
@@ -97,6 +98,11 @@
         }
 
     }
+     
+    function determineRatingBgc(rating){
+
+    }
+
     const favoriteBooks = [];
     console.log(favoriteBooks);
     const filters = [];
