@@ -21,17 +21,16 @@
     };
 
     class BooksList {
-        constructor(element, data) {
+        constructor(element) {
             const thisBooksList = this;
 
-            thisBooksList.data = data;
 
             thisBooksList.favoriteBooks = [];
             thisBooksList.filters = [];
 
+            thisBooksList.initData();
             thisBooksList.render();
             thisBooksList.getElements(element);
-            thisBooksList.initData();
             thisBooksList.initActions();
 
         }
@@ -149,7 +148,7 @@
         }
     }
 
-    const app = new BooksList();
+    // const app = new BooksList(element);
 
 
 
