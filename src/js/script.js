@@ -21,7 +21,7 @@
     };
 
     class BooksList {
-        constructor(element) {
+        constructor() {
             const thisBooksList = this;
 
 
@@ -30,7 +30,7 @@
 
             thisBooksList.initData();
             thisBooksList.render();
-            thisBooksList.getElements(element);
+            thisBooksList.getElements();
             thisBooksList.initActions();
 
         }
@@ -39,15 +39,14 @@
             this.data = dataSource.books;
         }
 
-        getElements(element) {
+        getElements() {
             const thisBooksList = this;
 
             thisBooksList.dom = {};
 
-            thisBooksList.dom.wrapper = element;
 
-            thisBooksList.dom.booksList = thisBooksList.dom.wrapper.querySelector(select.booksList);
-            thisBooksList.dom.filtersForm = thisBooksList.dom.wrapper.querySelector(select.filtersForm);
+            thisBooksList.dom.booksList = document.querySelector(select.booksList);
+            thisBooksList.dom.filtersForm = document.querySelector(select.filtersForm);
 
 
         }
@@ -98,7 +97,7 @@
 
 
 
-            thisBooksList.filtersForm.addEventListener('click', function (callback) {
+            thisBooksList.dom.filtersForm.addEventListener('click', function (callback) {
                 if (event.target.tagName == 'INPUT' && event.target.type == 'checkbox' && event.target.name == 'filter') {
                     console.log(event.target.value);
                 }
@@ -148,7 +147,7 @@
         }
     }
 
-    // const app = new BooksList(element);
+    const app = new BooksList();
 
 
 
